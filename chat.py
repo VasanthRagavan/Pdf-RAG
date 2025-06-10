@@ -9,7 +9,7 @@ client = OpenAI()
 
 # Vector Embeddings
 embedding_model = OpenAIEmbeddings(
-    model="text-embedding-3-large"
+    model="text-embedding-3-small"
 )
 
 vector_db = QdrantVectorStore.from_existing_collection(
