@@ -19,9 +19,7 @@ text_splitter = RecursiveCharacterTextSplitter(
 splitted_docs = text_splitter.split_documents(docs)
 
 #create vector embeddings
-embed_model = OpenAIEmbeddings(
-    model="text-embedding-small"
-)
+embed_model = OpenAIEmbeddings(model="text-embedding-3-small")
 
 vector_store = QdrantVectorStore.from_documents(
     documents=splitted_docs,
@@ -29,6 +27,8 @@ vector_store = QdrantVectorStore.from_documents(
     collection_name="learning_vectors",
     embedding=embed_model
 )
+
+print("indexing done")
 
 
 
