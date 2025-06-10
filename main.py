@@ -2,6 +2,7 @@ from pathlib import Path
 from openai import OpenAI
 from dotenv import load_dotenv
 from langchain_openai import OpenAIEmbeddings
+from langchain_qdrant import QdrantVectorStore
 load_dotenv()
 client = OpenAI()
 from langchain_community.document_loaders import PyPDFLoader
@@ -21,6 +22,17 @@ splitted_docs = text_splitter.split_documents(docs)
 embed_model = OpenAIEmbeddings(
     model="text-embedding-small"
 )
+
+vector_store = QdrantVectorStore.from_documents(
+    documents=splitted_docs,
+    url="http://localhost:6333",
+    collection_name="learning_vectors",
+    embedding=embed_model
+)
+
+
+
+
 
 
 
