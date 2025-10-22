@@ -4,7 +4,7 @@ This project indexes a PDF document using OpenAI embeddings and stores them in a
 
 ## 🚀 Features
 
-- ✅ Load and process a PDF (`crime-and-punishment.pdf`)
+- ✅ Load and process a PDF
 - ✅ Split text into context-aware chunks
 - ✅ Generate vector embeddings using OpenAI’s `text-embedding-3-small`
 - ✅ Store embeddings in Qdrant for fast semantic search
